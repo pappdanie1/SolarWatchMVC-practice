@@ -33,9 +33,24 @@
 <div class="container">
     <main role="main" class="pb-3">
         @RenderBody()
+        <form asp-action="GetSunsetSunrise" asp-controller="SolarWatch" method="get">
+            <div class="form-group">
+                <h2>Sunset Sunrise Times for a City</h2>
+                <label for="cityInput">Enter City Name:</label>
+                <input type="text" class="form-control" id="cityInput" name="city"/>
+            </div>
+            <button type="submit" class="btn btn-primary">Get Sunset/Sunrise</button>
+        </form>
+        <form asp-action="GetCity" asp-controller="SolarWatch" method="get">
+            <div class="form-group">
+                <h2>More Detailed info about a city</h2>
+                <label for="cityInput">Enter City Name:</label>
+                <input type="text" class="form-control" id="cityInput" name="city"/>
+            </div>
+            <button type="submit" class="btn btn-primary">Get City</button>
+        </form>
     </main>
 </div>
-
 <footer class="border-top footer text-muted">
     <div class="container">
         &copy; 2024 - SolarWatch_MVC - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
